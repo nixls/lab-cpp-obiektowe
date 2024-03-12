@@ -9,7 +9,7 @@ jobs:
       image: catthehacker/ubuntu:act-latest
     steps:
       - name: Install tools
-        run: apt-get update && apt-get install build-essential cmake ninja
+        run: apt-get update && apt-get install build-essential cmake ninja-build
 
       - name: Checkout
         uses: actions/checkout@v4.1.1
