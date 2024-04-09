@@ -5,6 +5,7 @@
 #include "ustawienia.h"
 #include "generator_losowy.h"
 #include "sasiedztwo.h"
+#include "zlab06.h"
 
 using namespace std;
 
@@ -32,46 +33,57 @@ string nazwaRodzaju(RodzajMieszkanca rodzaj) {
 }
 
 int main() {
-    Sasiedztwo sasiedztwo;
-    sasiedztwo.okreslSasiada(P, GLON);
-    sasiedztwo.okreslSasiada(PG, GRZYB);
-    sasiedztwo.okreslSasiada(G, GRZYB);
-    sasiedztwo.okreslSasiada(LG,GLON);
-    sasiedztwo.okreslSasiada(L,BAKTERIA);
-    sasiedztwo.okreslSasiada(LD,BAKTERIA);
-    sasiedztwo.okreslSasiada(D,GLON);
-    sasiedztwo.okreslSasiada(PD,PUSTKA);
+    Kwadrat kwadrat("Kwadrek",4);
 
-    cout << "Przeglad sasiedztwa:" << endl;
+    Kwadrat & refDoKwadrat = kwadrat;
 
-    for (int i = 0; i < 8; i++) {
-        Polozenie p = static_cast<Polozenie>(i);
-        RodzajMieszkanca r = sasiedztwo.ktoJestSasiadem(p);
+    double r0 = refDoKwadrat.promienKolaWgPola();
+    double r1 = refDoKwadrat.promienOkreguWgObwodu();
 
-        cout << "polozenie=" << p << " rodzaj=" << nazwaRodzaju(r) << endl;
-    }
+     cout << "ro=" << r0 << endl
+     << "r1=" << r1 << endl;
 
-    cout << endl << "Policzenie sasiadow okreslonego rodzaju:" << endl;
-    cout << " glony = " << sasiedztwo.ile(GLON) << endl;
-    cout << " grzyby = " << sasiedztwo.ile(GRZYB) << endl;
-    cout << " trupy = " << sasiedztwo.ile(TRUP) << endl;
 
-    cout << endl << "Wylosowanie sasiada:" << endl;
-    cout << " glon -> " << sasiedztwo.losujSasiada(GLON) << endl;
-    cout << " pustka ->" << sasiedztwo.losujSasiada(PUSTKA) << endl;
-    cout << " trup -> " << sasiedztwo.losujSasiada(TRUP) << endl;
-
-    long wiersz, kolumna;
-    cout << endl << "Zmiana indeksow [5][7]" << "wg polozenia:" << endl;
-
-    for (int i = 0; i < 8; i++) {
-        Polozenie p = static_cast<Polozenie>(i);
-        wiersz = 5; kolumna = 7;
-        Sasiedztwo::zmienIndeksyWgPolozenia(p, wiersz, kolumna);
-
-        cout << " polozenie: " << p << " ->[" << wiersz << "][" << kolumna << "]" << endl;
-    }
-    cout << endl;
+//    Sasiedztwo sasiedztwo;
+//    sasiedztwo.okreslSasiada(P, GLON);
+//    sasiedztwo.okreslSasiada(PG, GRZYB);
+//    sasiedztwo.okreslSasiada(G, GRZYB);
+//    sasiedztwo.okreslSasiada(LG,GLON);
+//    sasiedztwo.okreslSasiada(L,BAKTERIA);
+//    sasiedztwo.okreslSasiada(LD,BAKTERIA);
+//    sasiedztwo.okreslSasiada(D,GLON);
+//    sasiedztwo.okreslSasiada(PD,PUSTKA);
+//
+//    cout << "Przeglad sasiedztwa:" << endl;
+//
+//    for (int i = 0; i < 8; i++) {
+//        Polozenie p = static_cast<Polozenie>(i);
+//        RodzajMieszkanca r = sasiedztwo.ktoJestSasiadem(p);
+//
+//        cout << "polozenie=" << p << " rodzaj=" << nazwaRodzaju(r) << endl;
+//    }
+//
+//    cout << endl << "Policzenie sasiadow okreslonego rodzaju:" << endl;
+//    cout << " glony = " << sasiedztwo.ile(GLON) << endl;
+//    cout << " grzyby = " << sasiedztwo.ile(GRZYB) << endl;
+//    cout << " trupy = " << sasiedztwo.ile(TRUP) << endl;
+//
+//    cout << endl << "Wylosowanie sasiada:" << endl;
+//    cout << " glon -> " << sasiedztwo.losujSasiada(GLON) << endl;
+//    cout << " pustka ->" << sasiedztwo.losujSasiada(PUSTKA) << endl;
+//    cout << " trup -> " << sasiedztwo.losujSasiada(TRUP) << endl;
+//
+//    long wiersz, kolumna;
+//    cout << endl << "Zmiana indeksow [5][7]" << "wg polozenia:" << endl;
+//
+//    for (int i = 0; i < 8; i++) {
+//        Polozenie p = static_cast<Polozenie>(i);
+//        wiersz = 5; kolumna = 7;
+//        Sasiedztwo::zmienIndeksyWgPolozenia(p, wiersz, kolumna);
+//
+//        cout << " polozenie: " << p << " ->[" << wiersz << "][" << kolumna << "]" << endl;
+//    }
+//    cout << endl;
 
 //    cout << "Liczby losowe typu int:" << endl;
 //    cout << " od 0 do 5: ";

@@ -10,7 +10,7 @@
 using namespace std;
 
 class Prostokat {
-private:
+protected:
     string nazwa;
     double bok1, bok2;
     bool poprawny;
@@ -22,7 +22,7 @@ private:
 
 public:
     Prostokat(string n = "?", double a = 1, double b = 2);
-    ~Prostokat();
+    virtual ~Prostokat();
     bool czyPoprawny();
     const string& jakaNazwa();
     double podajPole();
